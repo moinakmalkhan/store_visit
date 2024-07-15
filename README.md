@@ -10,8 +10,10 @@
 ## Installation
 
 1. Clone the repository
-2. Install dependencies:
+2. Create a virtual environment and install the dependencies:
     ```bash
+    python -m venv venv
+    source venv/bin/activate
     pip install -r requirements.txt
     ```
 3. Set up the database in `store_visit/settings.py`
@@ -30,5 +32,5 @@
 
 ## API Endpoints
 
-- **GET** `/api/stores/<phone_number>/`: Get a list of stores linked to the employee's phone number.
+- **GET** `/api/stores/`: Get a list of stores linked to the employee's phone number. Requires `Authorization: Phone <phone_number>` header.
 - **POST** `/api/visits/`: Create a visit to a store. Requires `Authorization: Phone <phone_number>` header.
